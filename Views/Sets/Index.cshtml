@@ -1,0 +1,43 @@
+@model List<LegoNet.Models.Set>
+
+@{
+    ViewData["Title"] = "Sets";
+}
+
+<h1 class="display-4">Sets</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Weight</th>
+            <th>Dimension X</th>
+            <th>Dimension Y</th>
+            <th>Dimension Z</th>
+            <th>Year released</th>
+            <th>RRP</th>
+            <th>Is discontinued?</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            @* <td>@item.Category<br/>@item.Category.Name<br/>@Html.DisplayFor(modelItem => item.Category.Name)</td> *@
+            <td>
+                @item.Category?.Name (@item.CategoryId)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.Weight)</td>
+            <td>@Html.DisplayFor(modelItem => item.DimensionX)</td>
+            <td>@Html.DisplayFor(modelItem => item.DimensionY)</td>
+            <td>@Html.DisplayFor(modelItem => item.DimensionZ)</td>
+            <td>@Html.DisplayFor(modelItem => item.YearReleased)</td>
+            <td>@Html.DisplayFor(modelItem => item.Rrp)</td>
+            <td>@Html.DisplayFor(modelItem => item.IsDiscontinued)</td>
+        </tr>
+    }
+    </tbody>
+</table>

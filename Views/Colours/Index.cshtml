@@ -1,0 +1,30 @@
+@model List<LegoNet.Models.Colour>
+
+@{
+    ViewData["Title"] = "Colours";
+}
+
+<h1 class="display-4">Colours</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Bricklink ID</th>
+            <th>Bricklink name</th>
+            <th>Lego ID</th>
+            <th>Lego Name</th>
+            <th>Colour type</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.BricklinkId)</td>
+            <td>@Html.DisplayFor(modelItem => item.BricklinkName)</td>
+            <td>@Html.DisplayFor(modelItem => item.LegoId)</td>
+            <td>@Html.DisplayFor(modelItem => item.LegoName)</td>
+            <td>@item.TypeOfColour</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build /Users/jms/vsProjects/LegoNet/LegoNet.csproj",
+			"file": "/Users/jms/vsProjects/LegoNet/LegoNet.csproj",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "dotnet: build /Users/jms/vsProjects/LegoNet/LegoNet.csproj"
+		}
+	]
+}
